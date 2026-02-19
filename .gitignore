@@ -1,8 +1,12 @@
-# Nestjs specific
+# compiled output
 /dist
 /node_modules
+**/node_modules
 /build
 /tmp
+dist
+dist-ssr
+*.local
 
 # Logs
 logs
@@ -13,12 +17,52 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
+# Tests
+/coverage
+/.nyc_output
+
 # dotenv environment variable files
 .env
+.env.local
 .env.development
+.env.development.local
 .env.test
+.env.test.local
 .env.production
+.env.production.local
 
 # temp directory
 .temp
 .tmp
+
+# IDEs and editors
+/.idea
+.DS_Store
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+!.vscode/extensions.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json

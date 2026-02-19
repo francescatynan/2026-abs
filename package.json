@@ -1,0 +1,36 @@
+{
+  "name": "2026-abs",
+  "private": true,
+  "version": "0.1.0",
+  "license": "UNLICENSED",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:web": "npm run dev --workspace @2026-abs/web",
+    "dev:admin": "npm run dev:web",
+    "dev:api": "npm run start:dev --workspace @2026-abs/api",
+    "start:api": "npm run start --workspace @2026-abs/api",
+    "build": "npm run build:api && npm run build:web",
+    "build:web": "npm run build --workspace @2026-abs/web",
+    "build:admin": "npm run build:web",
+    "build:api": "npm run build --workspace @2026-abs/api",
+    "lint": "npm run lint:api && npm run lint:web",
+    "lint:web": "npm run lint --workspace @2026-abs/web",
+    "lint:admin": "npm run lint:web",
+    "lint:api": "npm run lint --workspace @2026-abs/api",
+    "test": "npm run test:api",
+    "test:api": "npm run test --workspace @2026-abs/api",
+    "test:web": "npm run test --workspace @2026-abs/web --if-present",
+    "test:admin": "npm run test:web",
+    "test:e2e": "node --test tests/e2e/cross-app.e2e.mjs",
+    "format": "npm run format:api && npm run format:web",
+    "format:api": "npm run format --workspace @2026-abs/api --if-present",
+    "format:web": "npm run format --workspace @2026-abs/web --if-present",
+    "format:admin": "npm run format:web"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
